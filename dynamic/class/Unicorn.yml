@@ -1,0 +1,39 @@
+Unicorn: 
+  name: 'Unicorn'
+  prefix: '&dUnicorn'
+  group: 'race'
+  mana: '&2Mana'
+  max-level: 25
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    mana-base: '101'
+    mana-scale: '1'
+    health-scale: '0'
+  mana-regen: 2.0
+  tree: 'REQUIREMENT'
+  skills: 
+  - 'Thaumic Bolt'
+  - 'Thaumic Blast'
+  - 'Disarm'
+  - 'Hold'
+  - 'Teleport'
+  - 'Teleport Group'
+  - 'Dimension Jump'
+  - 'Repel'
+  - 'Pull'
+  - 'Deflector Shield'
+  - 'Haste'
+  - 'Water Breathing'
+  - 'Resourceful'
+  - 'Infuse Stone'
+  - 'Enchanter'
+  - 'Scroll Scribe'
+  - 'Resilient'
+  - 'Distant Reach'
+  - 'Distant Interaction'
+  - 'Dispel'
+  icon: 'BLAZE_ROD'
+  icon-data: 0
+  exp-source: 17
