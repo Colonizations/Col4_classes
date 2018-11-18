@@ -1,0 +1,7188 @@
+loaded: 'true'
+Haste (Earthpony): 
+  name: 'Haste (Earthpony)'
+  type: 'Passive'
+  max-level: '2'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: '0'
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Speed Boost: {attr:boost.chance}&b%'
+  - ''
+  - '&fAllows you to move faster'
+  desc: ' []'
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'boost'
+            chance-base: '12.5'
+            chance-scale: '12.5'
+          children: ' {}'
+Swiftness: 
+  name: 'Swiftness'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Haste (Earth Pony)'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '600'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GHAST_TEAR'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fIncreases walk and run speed'
+  - '&fby 25% for four minutes'
+  - '&7(Requires Haste 2)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea database {player} Swiftness true 4800'
+          children:  {}
+Haste (Earth Pony): 
+  name: 'Haste (Earth Pony)'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Speed Boost: {attr:boost.chance}&b%'
+  - ''
+  - '&fAllows you to move faster'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'boost'
+            chance-base: '12.5'
+            chance-scale: '12.5'
+          children:  {}
+Crop Expert: 
+  name: 'Crop Expert'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MELON_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows growing melons and'
+  - '&fpumpkins using bonemeal'
+  desc:  []
+  components:  {}
+Green Hooves: 
+  name: 'Green Hooves'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Crop Expert'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'YELLOW_FLOWER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows all kinds of flowers to'
+  - '&fbe grown by using bonemeal'
+  - '&fon any flower'
+  - '&7(Requires Crop Expert)'
+  desc:  []
+  components:  {}
+Growth Expertise: 
+  name: 'Growth Expertise'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Green Hooves'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'CACTUS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows growing sugar canes'
+  - '&fand cacti with bonemeal'
+  - '&7(Requires Green Hooves)'
+  desc:  []
+  components:  {}
+Natural Connection: 
+  name: 'Natural Connection'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NETHER_STAR'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fWhile near farm animals that'
+  - '&freproduce, there is a high chance'
+  - '&fthat more animals will be born'
+  desc:  []
+  components:  {}
+Sturdy: 
+  name: 'Sturdy'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIRT'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fEarthponies are naturally fast'
+  - '&fand sturdy, taking 20% less'
+  - '&fdamage from all sources.'
+  - '&fThey move faster than'
+  - '&fother landlocked races'
+  desc:  []
+  components:  {}
+Tend Animals: 
+  name: 'Tend Animals'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Natural Connection'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fNearby farm animals will drop'
+  - '&fvarious useful items'
+  - '&7(Requires Natural Connection)'
+  desc:  []
+  components:  {}
+Toughness: 
+  name: 'Toughness'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_CHESTPLATE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Damage Reduction: {attr:reduction.chance}&b%'
+  - ''
+  - '&fGrants damage reduction against'
+  - '&fall types of damage'
+  - ''
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'reduction'
+            chance-base: '15'
+            chance-scale: '15'
+          children:  {}
+Observant: 
+  name: 'Observant'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Tend Animals'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '1800'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MONSTER_EGG'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fThe one who searches will find!'
+  - '&fWill allow you to find an animal'
+  - '&7(Requires Tend Animals)'
+  - '&7/findanimal <animal>'
+  desc:  []
+  components:  {}
+Apple Farmer: 
+  name: 'Apple Farmer'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Farmer'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'APPLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fAllows you to plant apples to'
+  - '&fgrow an apple tree that drops'
+  - '&fapples every now and then'
+  - '&fRight-click bottom of the tree'
+  - '&fto see the tree stats'
+  - '&7(Requires Farmer 2)'
+  desc:  []
+  components:  {}
+Farmer: 
+  name: 'Farmer'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_HOE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fHarvests a larger area when harvesting'
+  - '&fPlants crops in a larger area when planting'
+  - '&fUpgrading increases the area'
+  - '&7(Sneaking disables this ability)'
+  desc:  []
+  components:  {}
+Fertilizing: 
+  name: 'Fertilizing'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 15
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows crops to be grown'
+  - '&finstantly using bonemeal'
+  desc:  []
+  components:  {}
+Leap: 
+  name: 'Leap'
+  type: 'Dash'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '2'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARROW'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to leap in the'
+  - '&fdirection you are looking'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Block-b: 
+          type: 'condition'
+          data: 
+            standing: 'Not On Block'
+            material: 'Water'
+            icon-key: ''
+          children: 
+            Block-c: 
+              type: 'condition'
+              data: 
+                standing: 'Not On Block'
+                material: 'Lava'
+                icon-key: ''
+              children: 
+                Command-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Leap'
+                  children:  {}
+Careful Steps: 
+  name: 'Careful Steps'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SEEDS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - "&fCrops won't be trampled when"
+  - '&fyou jump or fall on them'
+  desc:  []
+  components:  {}
+Determined: 
+  name: 'Determined'
+  type: 'Self'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '300'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_PICKAXE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fTemporarily improves the mining speed'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Fast Digging'
+                counts: 'True'
+                icon-key: 'potion'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '60'
+                tier-base: '3'
+                seconds-base: '60'
+              children:  {}
+Ground Pound: 
+  name: 'Ground Pound'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Hoof Strike'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fKnocks nearby targets up into the air'
+  - '&7(Requires Hoof Strike)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '5'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '2'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '6'
+              children:  {}
+            Launch-d: 
+              type: 'mechanic'
+              data: 
+                right-scale: '0'
+                forward-base: '0'
+                right-base: '0'
+                forward-scale: '0'
+                counts: 'True'
+                upward-scale: '0.3'
+                icon-key: ''
+                upward-base: '0.8'
+              children:  {}
+Hoof Strike: 
+  name: 'Hoof Strike'
+  type: 'Single'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '7'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GOLD_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fDeals damage to a single target'
+  - '&fin front of you'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Linear-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '1'
+            range-scale: '0'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '8'
+              children:  {}
+Kick: 
+  name: 'Kick'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-2'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '8'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEATHER_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fKnocks the targets behind you'
+  - '&faway while dealing damage to them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '3.5'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Direction-c: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                type: 'Caster'
+                direction: 'Away'
+              children: 
+                Push-d: 
+                  type: 'mechanic'
+                  data: 
+                    speed-base: '4'
+                    speed-scale: '1.5'
+                    counts: 'True'
+                    icon-key: ''
+                    type: 'Fixed'
+                  children:  {}
+                Damage-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '5'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '11'
+                  children:  {}
+Fly: 
+  name: 'Fly'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - "&fAllows you to fly. It's not"
+  - '&fpossible to fly while in'
+  - '&fwater or while affected'
+  - '&fby certain effects'
+  - '&7/takeoff vanilla|custom'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pex user {player} group add pangaea_flyers'
+              children:  {}
+    Cleanup: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-e: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pex user {player} group remove pangaea_flyers'
+              children:  {}
+Gust: 
+  name: 'Gust'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '9'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Force: {attr:force.speed}'
+  - ''
+  - '&fSends out a gust of wind, pushing'
+  - '&ftargets in front of you away'
+  - '&fThe damage ignores armor'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Cone-b: 
+          type: 'target'
+          data: 
+            angle-scale: '0'
+            caster: 'False'
+            max-base: '99'
+            range-scale: '0'
+            range-base: '12'
+            icon-key: ''
+            angle-base: '120'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              data: 
+                speed-base: '4'
+                speed-scale: '0.5'
+                counts: 'True'
+                icon-key: 'force'
+                type: 'Fixed'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'True'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '5'
+              children:  {}
+            Damage-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '0'
+              children:  {}
+Leech: 
+  name: 'Leech'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '120'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PORK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Hunger points: {attr:hunger.chance}'
+  - ''
+  - '&fDrains the target for some'
+  - '&fhunger points, filling your'
+  - '&fhunger bar'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-g: 
+          type: 'condition'
+          data: 
+            icon-key: 'hunger'
+            chance-base: '30'
+            chance-scale: '30'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '3'
+            range-base: '6'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Saturation'
+                counts: 'False'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '-6'
+                seconds-scale: '0'
+                tier-base: '-6'
+                seconds-base: '0.05'
+              children:  {}
+            Self-d: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Potion-e: 
+                  type: 'mechanic'
+                  data: 
+                    potion: 'Saturation'
+                    counts: 'True'
+                    icon-key: ''
+                    ambient: 'True'
+                    tier-scale: '6'
+                    seconds-scale: '0'
+                    tier-base: '6'
+                    seconds-base: '0.05'
+                  children:  {}
+Attitude Control: 
+  name: 'Attitude Control'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Fly'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fImproves flight in various ways'
+  - '&fAutomatically prevents fatal falls'
+  - '&7(Sneaking disables some features)'
+  - '&7(Requires Fly)'
+  desc:  []
+  components:  {}
+Fly Faster: 
+  name: 'Fly Faster'
+  type: 'Passive'
+  max-level: 2
+  skill-req: 'Long-Range Flyer'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'QUARTZ'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Speed Boost: {attr:boost.chance}&b%'
+  - ''
+  - '&fImproves the maximum flight'
+  - '&fvelocity, at the cost of a higher'
+  - '&fhunger consumption rate'
+  - '&7(Requires Long-Range Flyer 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'boost'
+            chance-base: '12.5'
+            chance-scale: '12.5'
+          children:  {}
+Long-Range Flyer: 
+  name: 'Long-Range Flyer'
+  type: 'Passive'
+  max-level: 2
+  skill-req: 'Attitude Control'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'RAW_CHICKEN'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fImproves the hunger consumption'
+  - '&frate while flying, allowing longer'
+  - '&fflights with less food.'
+  - '&7(Requires Attitude Control)'
+  desc:  []
+  components:  {}
+Soft Landing: 
+  name: 'Soft Landing'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEATHER_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows falling from greater heights'
+  - '&fand taking less fall damage'
+  desc:  []
+  components:  {}
+Cloud Seed: 
+  name: 'Cloud Seed'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SNOW_BALL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows cloud blocks to be'
+  - '&fplaced in mid-air by right-'
+  - '&fclicking an empty space'
+  - '&fYou must hold a block in'
+  - '&forder to do this'
+  desc:  []
+  components:  {}
+Thunder: 
+  name: 'Thunder'
+  type: 'Target'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-6'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '22'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 7
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fFires a lightning bolt from the cloud'
+  - '&fyou have produced, which hits the'
+  - "&flocation you're aiming at"
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '4'
+            chance-scale: '3'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-d: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Thunder'
+          children:  {}
+Change Weather: 
+  name: 'Change Weather'
+  type: 'World'
+  max-level: 1
+  skill-req: 'Thunder'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '25'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '1200'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fChanges the weather of the world'
+  - '&7(Requires Thunder 2)'
+  - '&7(Requires level 25 to unlock)'
+  - '&7/changeweather sun|rain|thunder'
+  desc:  []
+  components:  {}
+Cloud Production: 
+  name: 'Cloud Production'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Water Condensation'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SNOW_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fProduces a decent amount'
+  - '&fof cloud materials'
+  - '&7(Requires Water Condensation)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Cloud_Production'
+          children:  {}
+Cooling: 
+  name: 'Cooling'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Cloud Production'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fCools down the nearby area,'
+  - '&fcreating some ice'
+  - '&7(Requires Cloud Production)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Cooling'
+          children:  {}
+Water Condensation: 
+  name: 'Water Condensation'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WATER_BUCKET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fCondenses water from the air'
+  - '&finto a bucket'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Water_Condensation'
+          children:  {}
+Preen: 
+  name: 'Preen'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '500'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Speed Boost: {attr:boost.chance}&b%'
+  - ''
+  - '&fPreening yourself by removing'
+  - '&fdamaged feathers, allowing'
+  - '&fthem to be used for other things.'
+  - '&fWill grant a small speed boost'
+  - '&ffor four minute after preening'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-f: 
+          type: 'condition'
+          data: 
+            icon-key: 'boost'
+            chance-base: '15'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Item-c: 
+              type: 'mechanic'
+              data: 
+                amount: '12'
+                material: 'Feather'
+                data: '0'
+                lore: 
+                - '&bOnce used for attitude control and general flight,'
+                - '&bnow used for decoration, writing or for utility'
+                counts: 'True'
+                byte: '0'
+                custom: 'True'
+                name: '&fPegasus Feather'
+                icon-key: ''
+              children:  {}
+            Command-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} Preen true 4800'
+              children:  {}
+Prism: 
+  name: 'Prism'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLASS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fPasses light through a prism,'
+  - '&fsolidifying light into usable dyes'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Prism'
+          children:  {}
+Carry: 
+  name: 'Carry'
+  type: 'Single'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SADDLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to carry other players.'
+  - '&fCarrying players will increase'
+  - '&fyour food consumption and reduce'
+  - '&fyour speed'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea skill carry {player}'
+          children:  {}
+Dash: 
+  name: 'Dash'
+  type: 'Dash'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '19'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARROW'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fDashes forward, dealing damage'
+  - '&fto the first entity hit'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '4.0'
+            chance-scale: '2.0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Dash'
+          children:  {}
+High Speed Strike: 
+  name: 'High Speed Strike'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_SWORD'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fMelee attacks does more'
+  - '&fdamage the faster you move'
+  desc:  []
+  components:  {}
+Quick Catch: 
+  name: 'Quick Catch'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Chance: &b{attr:chance.chance}&b%'
+  - ''
+  - '&fWith improved reflexes, sometimes'
+  - '&fyou will be able to catch an arrow'
+  - '&fin mid-flight, preventing damage if'
+  - '&fit would have hit you'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'chance'
+            chance-base: '15'
+            chance-scale: '15'
+          children:  {}
+Deflector Shield: 
+  name: 'Deflector Shield'
+  type: 'Self'
+  max-level: 2
+  skill-req: 'Pull'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '45'
+    mana-scale: '11'
+    cooldown-base: '150'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_CHESTPLATE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Chance: {attr:chance.chance}&b%'
+  - '&9Duration: {attr:duration.chance}'
+  - ''
+  - '&fCreates a shield around you, that'
+  - '&fsometimes stop incoming projectiles'
+  - '&7(Requires Pull)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-g: 
+          type: 'condition'
+          data: 
+            icon-key: 'chance'
+            chance-base: '30'
+            chance-scale: '20'
+          children:  {}
+        Chance-h: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '45'
+            chance-scale: '15'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Skill Level-b: 
+          type: 'condition'
+          data: 
+            skill: 'Deflector Shield'
+            max-level: '1'
+            icon-key: ''
+            min-level: '0'
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} Deflector_Shield true 900'
+              children:  {}
+        Skill Level-d: 
+          type: 'condition'
+          data: 
+            skill: 'Deflector Shield'
+            max-level: '99'
+            icon-key: ''
+            min-level: '2'
+          children: 
+            Command-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} Deflector_Shield true 1200'
+              children:  {}
+Haste: 
+  name: 'Haste'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to move 10% faster'
+  desc:  []
+  components:  {}
+Repel: 
+  name: 'Repel'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '21'
+    mana-scale: '6'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Force: {attr:force.speed}'
+  - ''
+  - '&fPushes away all nearby entities'
+  - '&fNearby entities will be pushed'
+  - '&fharder than distant entities'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '2'
+            icon-key: ''
+            radius-base: '6'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              data: 
+                speed-base: '3.75'
+                speed-scale: '0.75'
+                counts: 'True'
+                icon-key: 'force'
+                type: 'Scaled'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '2'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '4'
+              children:  {}
+Thaumic Blast: 
+  name: 'Thaumic Blast'
+  type: 'Projectile'
+  max-level: 2
+  skill-req: 'Thaumic Bolt'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '34'
+    mana-scale: '8'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fLaunches a projectile that'
+  - '&fexplodes on impact, dealing'
+  - '&fdamage to nearby entities'
+  - '&7(Requires Thaumic Bolt 2)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            lifespan: '7.5'
+            particles-base: '30'
+            radius-base: '0.25'
+            speed: '0.1'
+            frequency: '0.05'
+            arrangement: 'Circle'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '1.75'
+            particle: 'Witch Magic'
+            group: 'Enemy'
+            direction: 'XZ'
+            visible-radius: '100'
+            amount: '1'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '1.25'
+            angle-base: '30'
+            velocity-scale: '0.25'
+          children: 
+            Particle-c: 
+              type: 'mechanic'
+              data: 
+                visible-radius: '125'
+                amount: '1'
+                counts: 'False'
+                forward: '0'
+                radius-scale: '1'
+                particles-scale: '0'
+                particles-base: '20'
+                right: '0'
+                radius-base: '4'
+                speed: '0.1'
+                arrangement: 'Sphere'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                icon-key: ''
+                particle: 'Large Explode'
+                upward: '0'
+              children:  {}
+            Area-d: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '1'
+                icon-key: ''
+                radius-base: '4'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    value-scale: '4'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '11'
+                  children:  {}
+            Sound-f: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '100'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0'
+                version: '1.9+'
+                newsound: 'Entity Generic Explode'
+              children:  {}
+        Sound-g: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'False'
+            volume-base: '60'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '-0.95'
+            version: '1.9+'
+            newsound: 'Entity Wither Hurt'
+          children:  {}
+Thaumic Bolt: 
+  name: 'Thaumic Bolt'
+  type: 'Projectile'
+  max-level: 2
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '16'
+    mana-scale: '7'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'STRING'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fLaunches a small thaumic bolt'
+  - '&fthat damages the first target hit'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            lifespan: '10'
+            particles-base: '25'
+            radius-base: '0.25'
+            speed: '1'
+            frequency: '0.05'
+            arrangement: 'Circle'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '2'
+            particle: 'Witch Magic'
+            group: 'Enemy'
+            direction: 'XZ'
+            visible-radius: '100'
+            amount: '1'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '1.25'
+            angle-base: '30'
+            velocity-scale: '0.5'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                value-scale: '4'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '7'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '50'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0.9'
+                version: '1.9+'
+                newsound: 'Entity Firework Blast'
+              children:  {}
+        Sound-e: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'False'
+            volume-base: '40'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '-0.95'
+            version: '1.9+'
+            newsound: 'Entity Wither Hurt'
+          children:  {}
+Water Breathing: 
+  name: 'Water Breathing'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '45'
+    mana-scale: '10'
+    cooldown-base: '240'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'POTION'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fAllows breathing under water'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Water Breathing'
+                counts: 'True'
+                icon-key: 'potion'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '120'
+              children:  {}
+Infuse Stone: 
+  name: 'Infuse Stone'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '20'
+    mana-scale: '0'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - ''
+  - '&fInfuses some stone by magic,'
+  - '&fturning some into glowstone'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Infuse_Stone'
+          children:  {}
+Distant Interaction: 
+  name: 'Distant Interaction'
+  type: 'Target'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '8'
+    mana-scale: '0'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEVER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - ''
+  - '&fAllows interacting with levers'
+  - '&fand buttons over a distance.'
+  - '&fRequires being able to see the'
+  - '&fbutton or lever to activate them'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '15'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Distant_Interaction 15'
+          children:  {}
+Distant Reach: 
+  name: 'Distant Reach'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '5'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEASH'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - ''
+  - '&fTeleports an item you are'
+  - '&flooking at to your position'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '20'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Distant_Reach 20'
+          children:  {}
+Resourceful: 
+  name: 'Resourceful'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'EXP_BOTTLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Regen Boost: {attr:regen.chance}&b%'
+  - ''
+  - '&fBoosts mana regeneration'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'regen'
+            chance-base: '25'
+            chance-scale: '25'
+          children:  {}
+Enchanter: 
+  name: 'Enchanter'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENCHANTMENT_TABLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Discount: {attr:discount.chance}'
+  - ''
+  - '&fReduces the level cost of'
+  - '&fenchanting items in an'
+  - '&fenchanting table'
+  - '&fMinimum cost is one level'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'discount'
+            chance-base: '1'
+            chance-scale: '1'
+          children:  {}
+Scroll Scribe: 
+  name: 'Scroll Scribe'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '25'
+    mana-scale: '0'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENCHANTED_BOOK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - ''
+  - '&fGrants you a random enchantment book'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Scroll_Scribe'
+          children:  {}
+Teleport Group: 
+  name: 'Teleport Group'
+  type: 'Group'
+  max-level: 1
+  skill-req: 'Teleport'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '62'
+    mana-scale: '12'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'EYE_OF_ENDER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - '&9Delay: {attr:delay.delay}'
+  - ''
+  - '&fAfter some delay, teleports'
+  - '&fyou and all nearby entities'
+  - '&fto the location you aim at'
+  - '&7(Requires Teleport 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '40'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-d: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Delay-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                delay-base: '3'
+                icon-key: 'delay'
+                delay-scale: '0'
+              children: 
+                Command-f: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Teleport_Group'
+                  children:  {}
+            Sound-g: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '60'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0'
+                version: '1.9+'
+                newsound: 'Block Portal Travel'
+              children:  {}
+            Repeat-h: 
+              type: 'mechanic'
+              data: 
+                period: '1'
+                delay: '0'
+                repetitions-base: '3'
+                counts: 'False'
+                icon-key: ''
+                repetitions-scale: '0'
+              children: 
+                Particle-i: 
+                  type: 'mechanic'
+                  data: 
+                    visible-radius: '25'
+                    amount: '1'
+                    counts: 'False'
+                    forward: '0'
+                    radius-scale: '0'
+                    particles-scale: '0'
+                    particles-base: '20'
+                    right: '0'
+                    radius-base: '4'
+                    speed: '0.1'
+                    arrangement: 'Sphere'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    icon-key: ''
+                    particle: 'Portal'
+                    upward: '0'
+                  children:  {}
+            Cooldown-j: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                skill: 'Teleport Group'
+                value-scale: '0'
+                icon-key: ''
+                type: 'Seconds'
+                value-base: '-7.5'
+              children:  {}
+Teleport: 
+  name: 'Teleport'
+  type: 'Self'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '13'
+    mana-scale: '5'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENDER_PEARL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - ''
+  - '&fInstantly teleports you to'
+  - '&fthe location you aim at'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '30'
+            chance-scale: '15'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-d: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Teleport'
+          children:  {}
+Dimension Group Jump: 
+  name: 'Dimension Group Jump'
+  type: 'Group'
+  max-level: 1
+  skill-req: 'Dimension Jump'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '100'
+    mana-scale: '0'
+    cooldown-base: '1500'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENDER_PORTAL_FRAME'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fAfter some delay, teleports'
+  - '&fyou and all nearby entities'
+  - '&fto the nether or the surface,'
+  - '&fdepending on where you are'
+  - '&7(Requires Dimension Jump)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Sound-c: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '60'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0'
+                version: '1.9+'
+                newsound: 'Block Portal Travel'
+              children:  {}
+            Repeat-d: 
+              type: 'mechanic'
+              data: 
+                period: '1'
+                delay: '0'
+                repetitions-base: '4'
+                counts: 'False'
+                icon-key: ''
+                repetitions-scale: '0'
+              children: 
+                Particle-e: 
+                  type: 'mechanic'
+                  data: 
+                    visible-radius: '25'
+                    amount: '1'
+                    counts: 'False'
+                    forward: '0'
+                    radius-scale: '0'
+                    particles-scale: '0'
+                    particles-base: '20'
+                    right: '0'
+                    radius-base: '4'
+                    speed: '0.1'
+                    arrangement: 'Sphere'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    icon-key: ''
+                    particle: 'Portal'
+                    upward: '0'
+                  children:  {}
+            Delay-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                delay-base: '4'
+                icon-key: ''
+                delay-scale: '0'
+              children: 
+                Command-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Dimension_Group_Jump'
+                  children:  {}
+            Cooldown-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                skill: 'Dimension Group Jump'
+                value-scale: '0'
+                icon-key: ''
+                type: 'Seconds'
+                value-base: '-7.5'
+              children:  {}
+Dimension Jump: 
+  name: 'Dimension Jump'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Teleport Group'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '15'
+    mana-base: '75'
+    mana-scale: '0'
+    cooldown-base: '1200'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'OBSIDIAN'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fAfter some delay, teleports you'
+  - '&fto the nether or the surface,'
+  - '&fdepending on where you are'
+  - '&7(Requires Teleport Group)'
+  - '&7(Requires level 15 to unlock)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Sound-c: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '60'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0'
+                version: '1.9+'
+                newsound: 'Block Portal Travel'
+              children:  {}
+            Repeat-d: 
+              type: 'mechanic'
+              data: 
+                period: '1'
+                delay: '0'
+                repetitions-base: '4'
+                counts: 'False'
+                icon-key: ''
+                repetitions-scale: '0'
+              children: 
+                Particle-e: 
+                  type: 'mechanic'
+                  data: 
+                    visible-radius: '25'
+                    amount: '1'
+                    counts: 'False'
+                    forward: '0'
+                    radius-scale: '0'
+                    particles-scale: '0'
+                    particles-base: '20'
+                    right: '0'
+                    radius-base: '4'
+                    speed: '0.1'
+                    arrangement: 'Sphere'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    icon-key: ''
+                    particle: 'Portal'
+                    upward: '0'
+                  children:  {}
+            Delay-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                delay-base: '4'
+                icon-key: ''
+                delay-scale: '0'
+              children: 
+                Command-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Dimension_Jump'
+                  children:  {}
+            Cooldown-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                skill: 'Dimension Jump'
+                value-scale: '0'
+                icon-key: ''
+                type: 'Seconds'
+                value-base: '-7.5'
+              children:  {}
+Efficient Flyer: 
+  name: 'Efficient Flyer'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Attitude Control'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'RAW_CHICKEN'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fImproves the hunger consumption'
+  - '&frate while flying, allowing'
+  - '&flonger flights with less food'
+  - '&7(Requires Attitude Control)'
+  desc:  []
+  components:  {}
+Clear Resin: 
+  name: 'Clear Resin'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Solid Resin'
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'STAINED_GLASS'
+  icon-data: 5
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fCreates 4 clear resin blocks for'
+  - '&fthe cost of 20 hunger points'
+  - '&7(Requires Solid Resin)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Clear_Resin'
+          children:  {}
+Solid Resin: 
+  name: 'Solid Resin'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'STAINED_CLAY'
+  icon-data: 5
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fCreates 12 solid resin blocks for'
+  - '&fthe cost of 30 hunger points'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Solid_Resin'
+          children:  {}
+Sticky Resin: 
+  name: 'Sticky Resin'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Clear Resin'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SLIME_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fCreates 3 sticky resin blocks'
+  - '&ffor the cost of 60 hunger points'
+  - '&7(Requires Clear Resin)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Sticky_Resin'
+          children:  {}
+Thaumic Strike: 
+  name: 'Thaumic Strike'
+  type: 'Dash'
+  max-level: 2
+  skill-req: 'Thaumic Bolt'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-2'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '21'
+    mana-scale: '6'
+    cooldown-base: '16'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fDashing forward, dealing'
+  - '&fdamage to all targets within'
+  - '&fa small area around where'
+  - '&fyou land on the ground'
+  - '&7(Requires Thaumic Bolt 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '10'
+            chance-scale: '5'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Thaumic_Strike'
+          children:  {}
+Share the Love 2: 
+  name: 'Share the Love 2'
+  type: 'Self'
+  max-level: '1'
+  skill-req: 'Share the Love'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'COOKED_BEEF'
+  icon-data: '0'
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fConsumes 110 hunger points'
+  - '&fto generate a food item that'
+  - '&fcan be shared with other players'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Share_the_Love_2'
+              children: ' {}'
+Share the Love: 
+  name: 'Share the Love'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NETHER_STAR'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fConsumes 40 hunger points'
+  - '&fto generate a food item that'
+  - '&fcan be shared with other players'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Share_the_Love'
+              children:  {}
+Hollow Leg: 
+  name: 'Hollow Leg'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Additional points: {attr:hunger.chance}'
+  - ''
+  - '&fProvides additional hunger'
+  - '&fpoints, allowing surviving'
+  - '&flonger without eating'
+  - '&7/showhunger'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'hunger'
+            chance-base: '25'
+            chance-scale: '25'
+          children:  {}
+Bug: 
+  name: 'Bug'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 10
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fChangelings take 15%'
+  - '&fextra damage from all'
+  - '&fdamage sources'
+  desc:  []
+  components:  {}
+Reinforced Shell: 
+  name: 'Reinforced Shell'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIAMOND_CHESTPLATE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fReduces the damage taken'
+  - '&ffrom all sources by 15%'
+  desc:  []
+  components:  {}
+Ambient Feeding: 
+  name: 'Ambient Feeding'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 2
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fWhen near non-changeling'
+  - '&fentities, some of your hunger'
+  - '&fpoints will be restored from'
+  - '&fthe ambient atmosphere'
+  desc:  []
+  components:  {}
+Night Vision: 
+  name: 'Night Vision'
+  type: 'Passive (Toggle)'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '10'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'POTION'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fWill provide vision in dark'
+  - '&fareas when enabled'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Night_Vision'
+          children:  {}
+Drain: 
+  name: 'Drain'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '38'
+    mana-scale: '10'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Healing: {attr:heal.value}'
+  - ''
+  - '&fDrains some health from a'
+  - '&fsingle target, healing you.'
+  - '&fThis ignores the armor of'
+  - '&fthe target'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                value-scale: '2.5'
+                true: 'True'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '2.5'
+              children:  {}
+            Self-d: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Heal-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '2.5'
+                    icon-key: 'heal'
+                    type: 'Health'
+                    value-base: '2.5'
+                  children:  {}
+            Damage-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '0'
+              children:  {}
+Metabolism: 
+  name: 'Metabolism'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Drain'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fConverts hunger points'
+  - '&fto health at a slow rate'
+  - '&fwhen you are damaged'
+  - '&7(Requires Drain 2)'
+  desc:  []
+  components:  {}
+Leech Group: 
+  name: 'Leech Group'
+  type: 'Group'
+  max-level: 1
+  skill-req: 'Leech'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '120'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'RAW_BEEF'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Hunger points: {attr:hunger.chance}'
+  - ''
+  - '&fDrains the targets for some'
+  - '&fhunger points, filling your'
+  - '&fhunger bar'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-e: 
+          type: 'condition'
+          data: 
+            icon-key: 'hunger'
+            chance-base: '5'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Leech_Group'
+              children:  {}
+Disguise: 
+  name: 'Disguise'
+  type: 'Self'
+  max-level: 2
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '20'
+    level-base: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 13
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to disguise as'
+  - '&fa mob. Improved disguise'
+  - '&fallows disguising as players'
+  - '&7(Requires level 20 for upgrade)'
+  - '&7/dis, /undis and /dishelp'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-f: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-g: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pex user {player} group add pangaea_shapeshifters'
+              children:  {}
+    Cleanup: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pex user {player} group remove pangaea_shapeshifters'
+              children:  {}
+            Command-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'undisplayer {player}'
+              children:  {}
+Hailstorm: 
+  name: 'Hailstorm'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Cooling'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-7'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '57'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PACKED_ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:duration.chance}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fGenerates a storm of hail'
+  - '&faround you, dealing damage'
+  - '&fto all nearby entities'
+  - '&fevery second'
+  - '&7(Requires Cooling)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '10'
+            chance-scale: '5'
+          children: 
+            Chance-e: 
+              type: 'condition'
+              data: 
+                icon-key: 'damage'
+                chance-base: '1.0'
+                chance-scale: '0.25'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Hailstorm'
+          children:  {}
+Throw Dust: 
+  name: 'Throw Dust'
+  type: 'Group'
+  max-level: '1'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SULPHUR'
+  icon-data: '0'
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: ' []'
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Cone-b: 
+          type: 'target'
+          data: 
+            angle-scale: '0'
+            caster: 'False'
+            max-base: '99'
+            range-scale: '0'
+            range-base: '8'
+            icon-key: 'cone'
+            angle-base: '90'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Blindness'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '1'
+                tier-base: '1'
+                seconds-base: '10'
+              children: ' {}'
+Throw Dirt: 
+  name: 'Throw Dirt'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '18'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SULPHUR'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fThrows some dirt at the'
+  - '&ftargets, blinding them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Cone-b: 
+          type: 'target'
+          data: 
+            angle-scale: '0'
+            caster: 'False'
+            max-base: '99'
+            range-scale: '0'
+            range-base: '15'
+            icon-key: 'cone'
+            angle-base: '45'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Blindness'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '1'
+                tier-base: '1'
+                seconds-base: '10'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '1'
+              children:  {}
+Stab: 
+  name: 'Stab'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-3'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '17'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_SPADE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fYou stab your target,'
+  - '&fbypassing their armor'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Flag Clear-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            key: 'weapon'
+          children:  {}
+        Item-c: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Wood Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-e: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Stone Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-g: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Iron Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-i: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Gold Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-j: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-k: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Diamond Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-l: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Flag-m: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Set'
+            key: 'weapon'
+          children: 
+            Single-n: 
+              type: 'target'
+              data: 
+                range-scale: '0'
+                range-base: '5'
+                tolerance-scale: '0'
+                tolerance-base: '4'
+                icon-key: ''
+                wall: 'False'
+                group: 'Enemy'
+              children: 
+                Damage-o: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '3'
+                    true: 'True'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '3'
+                  children:  {}
+                Damage-p: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0'
+                    true: 'False'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '0'
+                  children:  {}
+                Self-q: 
+                  type: 'target'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Command-r: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        icon-key: ''
+                        type: 'Console'
+                        command: 'pangaea cast {player} Stab'
+                      children:  {}
+        Flag-s: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Not Set'
+            key: 'weapon'
+          children: 
+            Message-t: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cYou need to hold a weapon to use this ability'
+              children:  {}
+Screech: 
+  name: 'Screech'
+  type: 'Group'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '28'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NOTE_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fYou screech, disorienting the'
+  - '&ftargets and weakening them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Cone-b: 
+          type: 'target'
+          data: 
+            angle-scale: '0'
+            caster: 'False'
+            max-base: '99'
+            range-scale: '0'
+            range-base: '25'
+            icon-key: ''
+            angle-base: '150'
+            wall: 'True'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Confusion'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '10'
+              children:  {}
+            Potion-d: 
+              type: 'mechanic'
+              data: 
+                potion: 'Weakness'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '10'
+              children:  {}
+            Potion-e: 
+              type: 'mechanic'
+              data: 
+                potion: 'Slow'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '10'
+              children:  {}
+        Repeat-g: 
+          type: 'mechanic'
+          data: 
+            period: '0.33'
+            delay: '0'
+            repetitions-base: '4'
+            counts: 'True'
+            icon-key: ''
+            repetitions-scale: '0'
+          children: 
+            Sound-h: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'True'
+                volume-base: '100'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '2'
+                version: '1.9+'
+                newsound: 'Entity Ghast Hurt'
+              children:  {}
+Sensing: 
+  name: 'Sensing'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Night Vision'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '5'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fConcentrating on the world'
+  - '&faround you, you listen for sounds'
+  - '&fthat reveals where creatures are'
+  - '&7(Requires Night Vision)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Sensing 25.0 200'
+          children:  {}
+Lacerate: 
+  name: 'Lacerate'
+  type: 'Single'
+  max-level: 2
+  skill-req: 'Swipe'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '21'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_SWORD'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Total Damage: {attr:bleed.repetitions}'
+  - ''
+  - '&fYour weapon strike softer areas,'
+  - '&fcutting deeper. The target take true'
+  - '&fdamage over time from bleeding'
+  - '&7(Requires Swipe 2)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Flag Clear-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            key: 'weapon'
+          children:  {}
+        Item-c: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Wood Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-e: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Stone Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-g: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Iron Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-i: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Gold Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-j: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-k: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Diamond Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-l: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Flag-m: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Set'
+            key: 'weapon'
+          children: 
+            Single-n: 
+              type: 'target'
+              data: 
+                range-scale: '0'
+                range-base: '5'
+                tolerance-scale: '0'
+                tolerance-base: '4'
+                icon-key: ''
+                wall: 'False'
+                group: 'Enemy'
+              children: 
+                Repeat-o: 
+                  type: 'mechanic'
+                  data: 
+                    period: '2.5'
+                    delay: '0'
+                    repetitions-base: '4'
+                    counts: 'False'
+                    icon-key: 'bleed'
+                    repetitions-scale: '4'
+                  children: 
+                    Damage-p: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        value-scale: '0'
+                        true: 'True'
+                        icon-key: ''
+                        type: 'Damage'
+                        value-base: '1'
+                      children:  {}
+                    Damage-q: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        value-scale: '0'
+                        true: 'False'
+                        icon-key: ''
+                        type: 'Damage'
+                        value-base: '0'
+                      children:  {}
+                Damage-r: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0'
+                    true: 'False'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '0'
+                  children:  {}
+                Self-s: 
+                  type: 'target'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Command-t: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        icon-key: ''
+                        type: 'Console'
+                        command: 'pangaea cast {player} Lacerate'
+                      children:  {}
+        Flag-u: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Not Set'
+            key: 'weapon'
+          children: 
+            Message-v: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cYou need to hold a weapon to use this ability'
+              children:  {}
+Night Prowler: 
+  name: 'Night Prowler'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Sensing'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WATCH'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Speed Boost: {attr:speed.chance}&b%'
+  - '&9Damage Boost: {attr:damage.chance}&b%'
+  - '&9Energy Cost: {attr:energy.chance}&b%'
+  - ''
+  - '&fWhen in moonlight, your abilities'
+  - '&fare amplified. You move faster and'
+  - '&fyour attacks are more dangerous,'
+  - '&fbut you also consume more energy'
+  - '&7(Requires Sensing)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '20'
+            chance-scale: '0'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              data: 
+                icon-key: 'speed'
+                chance-base: '10'
+                chance-scale: '0'
+              children: 
+                Chance-d: 
+                  type: 'condition'
+                  data: 
+                    icon-key: 'energy'
+                    chance-base: '15'
+                    chance-scale: '0'
+                  children:  {}
+Rolling with it: 
+  name: 'Rolling with it'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Quick Catch'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_LEGGINGS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fReduces damage taken from'
+  - '&fphysical attacks by 10%'
+  - '&7(Requires Quick Catch 2)'
+  desc:  []
+  components:  {}
+Improved Fishing: 
+  name: 'Improved Fishing'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FISHING_ROD'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fWhen fishing, there is a chance'
+  - '&fthat multiple fishes will be'
+  - '&fcaught. Also has a chance of'
+  - '&ffishing out rare items'
+  desc:  []
+  components:  {}
+Durable Armor: 
+  name: 'Durable Armor'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_CHESTPLATE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fYour armor takes less'
+  - '&fdamage when in use'
+  desc:  []
+  components:  {}
+Fruit Lover: 
+  name: 'Fruit Lover'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'APPLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fFruits and other juicy foods'
+  - '&fprovides various beneficial'
+  - '&feffects'
+  desc:  []
+  components:  {}
+Teamwork: 
+  name: 'Teamwork'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_HELMET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Damage Increase: {attr:damage.chance}&b%'
+  - ''
+  - '&fOther players who attack the'
+  - '&fsame targets as you will deal'
+  - '&fmore damage to those targets'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '30'
+            chance-scale: '0'
+          children:  {}
+Fling Crystal: 
+  name: 'Fling Crystal'
+  type: 'Projectile'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-3'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '12'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIAMOND'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fSends a small shard of crystal'
+  - '&fflying, dealing damage to the'
+  - '&ffirst target hit'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Item Projectile-b: 
+          type: 'mechanic'
+          data: 
+            item: 'Diamond'
+            counts: 'True'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            velocity-base: '1.75'
+            icon-key: ''
+            amount-scale: '0'
+            position: '0'
+            item-data: '0'
+            angle-base: '30'
+            velocity-scale: '0'
+            group: 'Enemy'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                value-scale: '4'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '6'
+              children:  {}
+Radiance: 
+  name: 'Radiance'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '22'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'COOKIE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fEmits a quick flash of light,'
+  - '&fblinding everyone who are'
+  - '&flooking at you'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '15'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Direction-c: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                type: 'Target'
+                direction: 'Towards'
+              children: 
+                Potion-d: 
+                  type: 'mechanic'
+                  data: 
+                    potion: 'Blindness'
+                    counts: 'True'
+                    icon-key: ''
+                    ambient: 'True'
+                    tier-scale: '0'
+                    seconds-scale: '0'
+                    tier-base: '1'
+                    seconds-base: '10'
+                  children:  {}
+Skill 1: 
+  name: 'Skill 1'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'COOKIE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&f<something something weakness>'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '10'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Weakness'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '3'
+                seconds-base: '18'
+              children:  {}
+Crystallized: 
+  name: 'Crystallized'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'COOKIE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fReduces the damage taken'
+  - '&ffrom all sources by 10%'
+  desc:  []
+  components:  {}
+Absorb: 
+  name: 'Absorb'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Metabolism'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '25'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE_TORCH_ON'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Hunger Cost: {attr:hunger.chance}'
+  - '&9Mana Gain: {attr:mana.chance}'
+  - ''
+  - '&fConverts some of your hunger'
+  - '&fpoints into usable mana points'
+  - '&7(Requires Metabolism)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'hunger'
+            chance-base: '65'
+            chance-scale: '0'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              data: 
+                icon-key: 'mana'
+                chance-base: '30'
+                chance-scale: '0'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-e: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Absorb'
+              children:  {}
+Empower: 
+  name: 'Empower'
+  type: 'Self'
+  max-level: '1'
+  skill-req: 'Thaumic Strike'
+  skill-req-lvl: '2'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '20'
+    mana-scale: '0'
+    cooldown-base: '180'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_INGOT'
+  icon-data: '0'
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&9Duration: {attr:duration.chance}'
+  - '&9Damage Boost: {attr:damage.chance}&b%'
+  - '&9Hunger Cost: {attr:energy.chance}&b%'
+  - ''
+  - '&fEmpowers yourself at the'
+  - '&fcost of a higher hunger'
+  - '&fconsumption rate'
+  desc: ' []'
+  components: ' {}'
+Fire Portal: 
+  name: 'Fire Portal'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Thaumic Strike'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '58'
+    mana-scale: '0'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENDER_PEARL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - ''
+  - '&fAllows you to teleport'
+  - '&fthrough very thin walls'
+  - '&7(Requires Thaumic Strike 2)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '5'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Fire_Portal'
+          children:  {}
+Hardened Blade: 
+  name: 'Hardened Blade'
+  type: 'Passive'
+  max-level: '1'
+  skill-req-lvl: '1'
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_INGOT'
+  icon-data: '0'
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Damage Increase: {attr:damage.chance}&b%'
+  - ''
+  - '&fImproves the damage dealt'
+  - '&fby all types of swords'
+  desc: ' []'
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '15'
+            chance-scale: '0'
+          children: ' {}'
+Trained: 
+  name: 'Trained'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_INGOT'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Damage Increase: {attr:damage.chance}&b%'
+  - ''
+  - '&fImproves the damage dealt'
+  - '&fby all types of swords'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '15'
+            chance-scale: '0'
+          children:  {}
+Swipe: 
+  name: 'Swipe'
+  type: 'Single'
+  max-level: 2
+  skill-req: 'Stab'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-3'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '11'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_HOE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fYou spin your weapon'
+  - '&faround, dealing damage'
+  - '&fto all targets nearby you'
+  - '&7(Requires Stab 2)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Flag Clear-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            key: 'weapon'
+          children:  {}
+        Item-c: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Wood Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-e: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Stone Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-g: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Iron Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-i: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Gold Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-j: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-k: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Diamond Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-l: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Flag-m: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Set'
+            key: 'weapon'
+          children: 
+            Area-n: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '0'
+                icon-key: ''
+                radius-base: '7'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-o: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '6'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '6'
+                  children:  {}
+            Self-p: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Command-q: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Swipe'
+                  children:  {}
+        Flag-r: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Not Set'
+            key: 'weapon'
+          children: 
+            Message-s: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cYou need to hold a weapon to use this ability'
+              children:  {}
+Fire Slash: 
+  name: 'Fire Slash'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '20'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.seconds}'
+  - ''
+  - '&fSets one target on fire for some'
+  - '&fduration, as well as dealing'
+  - '&finitial damage to that target'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '6'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Fire-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: 'duration'
+                seconds-scale: '3.5'
+                seconds-base: '3.5'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '3'
+                true: 'True'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '7'
+              children:  {}
+            Damage-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '0'
+              children:  {}
+Fire Bolt: 
+  name: 'Fire Bolt'
+  type: 'Projectile'
+  max-level: 2
+  skill-req: 'Fire Slash'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '20'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.seconds}'
+  - ''
+  - '&fLaunches a ball of fire towards'
+  - '&fthe target location; all targets'
+  - '&fwithin the impact area are'
+  - '&fignited and pushed away'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            lifespan: '5'
+            particles-base: '20'
+            radius-base: '0.5'
+            speed: '0.08'
+            frequency: '0.05'
+            arrangement: 'Sphere'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '3'
+            particle: 'Flame'
+            group: 'Enemy'
+            visible-radius: '75'
+            amount: '1'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '1.5'
+            angle-base: '0'
+            velocity-scale: '0'
+          children: 
+            Area-c: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '0'
+                icon-key: ''
+                radius-base: '4'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '2'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '4'
+                  children:  {}
+                Fire-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    icon-key: 'duration'
+                    seconds-scale: '2'
+                    seconds-base: '3'
+                  children:  {}
+                Push-f: 
+                  type: 'mechanic'
+                  data: 
+                    speed-base: '3'
+                    speed-scale: '1'
+                    counts: 'True'
+                    icon-key: ''
+                    type: 'Fixed'
+                  children:  {}
+Firestorm: 
+  name: 'Firestorm'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Ignite'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-8'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '60'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FIREBALL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.repetitions}'
+  - ''
+  - '&fStarts a firestorm around you,'
+  - '&fburning all nearby entities'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Repeat-b: 
+          type: 'mechanic'
+          data: 
+            period: '1'
+            delay: '1'
+            repetitions-base: '20'
+            counts: 'True'
+            icon-key: 'duration'
+            repetitions-scale: '10'
+          children: 
+            Area-c: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '6'
+                icon-key: 'range'
+                radius-base: '12'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0.75'
+                    true: 'True'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '1.25'
+                  children:  {}
+                Fire-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    icon-key: ''
+                    seconds-scale: '0'
+                    seconds-base: '5'
+                  children:  {}
+                Damage-f: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0'
+                    true: 'False'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '0'
+                  children:  {}
+            Particle-g: 
+              type: 'mechanic'
+              data: 
+                visible-radius: '75'
+                amount: '1'
+                counts: 'True'
+                forward: '0'
+                radius-scale: '4'
+                particles-scale: '20'
+                particles-base: '100'
+                right: '0'
+                radius-base: '12'
+                speed: '0.08'
+                arrangement: 'Sphere'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                icon-key: ''
+                particle: 'Flame'
+                upward: '0'
+              children:  {}
+Ignite: 
+  name: 'Ignite'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '16'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FLINT_AND_STEEL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.seconds}'
+  - ''
+  - '&fIgnites a single target, harming'
+  - '&fthem at the same time'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '3'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '4'
+              children:  {}
+            Fire-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: 'duration'
+                seconds-scale: '4'
+                seconds-base: '4'
+              children:  {}
+Water Damage: 
+  name: 'Water Damage'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3500'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'SNOW_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fDamages you while in water, or'
+  - '&fon snow'
+  - ''
+  - "&cDon't forget to use me before combat!"
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Repeat-c: 
+              type: 'mechanic'
+              data: 
+                period: '1'
+                delay: '0'
+                repetitions-base: '3600'
+                counts: 'True'
+                icon-key: ''
+                repetitions-scale: '0'
+              children: 
+                Water-d: 
+                  type: 'condition'
+                  data: 
+                    icon-key: ''
+                    state: 'In Water'
+                  children: 
+                    Damage-e: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'True'
+                        value-scale: '0'
+                        true: 'False'
+                        icon-key: ''
+                        type: 'Damage'
+                        value-base: '5'
+                      children:  {}
+            Message-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                message: '&cDamage from water/snow active, will be active for ONE hour only! Cooldown is the time left before effect runs out'
+              children:  {}
+Terrorize: 
+  name: 'Terrorize'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '60'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:effect.seconds}'
+  - ''
+  - '&fAll nearby targets are overrun'
+  - '&fwith fear, clouding their vision'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '999'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '50'
+            wall: 'True'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Blindness'
+                counts: 'True'
+                icon-key: 'effect'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '15'
+              children:  {}
+        Sound-d: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '500'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '0.5'
+            version: '1.9+'
+            newsound: 'Entity Wither Spawn'
+          children:  {}
+Swim: 
+  name: 'Swim'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to swim efficiently.'
+  - "&fIt's not possible to swim fast"
+  - '&fwhile affected by certain effects'
+  - '&7(Double-tap space to activate)'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pex user {player} group add pangaea_flyers'
+              children:  {}
+            Command-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} FlightManager.invertAir true -1'
+              children:  {}
+    Cleanup: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-f: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-g: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pex user {player} group remove pangaea_flyers'
+              children:  {}
+            Command-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} FlightManager.invertAir false -1'
+              children:  {}
+Sea Creature: 
+  name: 'Sea Creature'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'QUARTZ'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fYou can move faster while'
+  - '&fsubmerged, but slower on'
+  - '&fthe water surface and land'
+  desc:  []
+  components:  {}
+Endurance: 
+  name: 'Endurance'
+  type: 'Passive'
+  max-level: 2
+  skill-req: 'Aquatic Lifeform'
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLASS_BOTTLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Duration: {attr:duration.chance}&b%'
+  - ''
+  - '&fAllows you to stay out of water'
+  - '&ffor longer before suffocating'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '25'
+            chance-scale: '25'
+          children:  {}
+Aquatic Lifeform: 
+  name: 'Aquatic Lifeform'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLASS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows breathing underwater,'
+  - '&fbut not while on land'
+  - '&fYou spend less energy while'
+  - '&fsubmerged in water'
+  - '&7/showair'
+  desc:  []
+  components:  {}
+Kelp Farmer: 
+  name: 'Kelp Farmer'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'VINE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to plant saplings to'
+  - '&fgrow kelp, which can be eaten'
+  - '&fThe kelp will grow by itself'
+  desc:  []
+  components:  {}
+Bright Crafter: 
+  name: 'Bright Crafter'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Deeper Understanding'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '5'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SEA_LANTERN'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fExcellent crafting skills allow'
+  - '&fyou to create a handy lamp'
+  - '&7(Requires Deeper Understanding)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Bright_Crafter'
+              children:  {}
+Deeper Understanding: 
+  name: 'Deeper Understanding'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Harvest Sponge'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PRISMARINE_SHARD'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fWith a thorough knowledge of'
+  - '&fthe abyss, you know a method'
+  - '&fof crafting prismarine shards'
+  - '&7(Requires Harvest Sponge)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Deeper_Understanding'
+              children:  {}
+Harvest Sponge: 
+  name: 'Harvest Sponge'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '60'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SPONGE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: &b{attr:cooldown}'
+  - ''
+  - '&fA good eye helps you spot'
+  - '&fsponges around in the world'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Harvest_Sponge'
+              children:  {}
+Aquired Taste: 
+  name: 'Aquired Taste'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'RAW_FISH'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fRaw fish yields more benefits'
+  - '&fthan cooked fish does'
+  desc:  []
+  components:  {}
+Fast Swimmer: 
+  name: 'Fast Swimmer'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Swim'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'STRING'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to swim 15% faster'
+  - '&7(Requires Swim)'
+  desc:  []
+  components:  {}
+Water Jet: 
+  name: 'Water Jet'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-3'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fStrikes a single target with a'
+  - '&fjet of water, harming them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Water-b: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'In Water'
+          children: 
+            Single-c: 
+              type: 'target'
+              data: 
+                range-scale: '0'
+                range-base: '18'
+                tolerance-scale: '0'
+                tolerance-base: '4'
+                icon-key: ''
+                wall: 'False'
+                group: 'Enemy'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '6'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '6'
+                  children:  {}
+        Water-e: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'Out Of Water'
+          children: 
+            Self-f: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Message-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    message: '&cYou have to be in water to do this!'
+                  children:  {}
+Torrent: 
+  name: 'Torrent'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Water Jet'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '21'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PACKED_ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fSends a wave of water towards'
+  - '&fthe targets, harming them all'
+  - '&7(Requires Water Jet 2)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Water-b: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'In Water'
+          children: 
+            Cone-c: 
+              type: 'target'
+              data: 
+                angle-scale: '0'
+                caster: 'False'
+                max-base: '99'
+                range-scale: '0'
+                range-base: '8'
+                icon-key: ''
+                angle-base: '90'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '6'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '6'
+                  children:  {}
+        Water-e: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'Out Of Water'
+          children: 
+            Self-f: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Message-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    message: '&cYou have to be in water to do this!'
+                  children:  {}
+Water Worker: 
+  name: 'Water Worker'
+  type: 'Passive (Toggle)'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GOLD_PICKAXE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fImproves the mining speed'
+  - '&fwhile underwater'
+  - '&fWhile active, you consume'
+  - '&f10% more energy'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Water_Worker'
+          children:  {}
+Swirl: 
+  name: 'Swirl'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Torrent'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '19'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SNOW_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Radius: {attr:range.chance}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fSpins around in the water,'
+  - '&fcausing damage to all nearby'
+  - '&ftargets within line of sight'
+  - '&7(Requires Torrent 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '6'
+            chance-scale: '5'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              data: 
+                icon-key: 'range'
+                chance-base: '12'
+                chance-scale: '4'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-e: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Water-f: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                state: 'Out Of Water'
+              children: 
+                Message-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    message: '&9Damage: {attr:damage.value}'
+                  children:  {}
+            Water-h: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                state: 'In Water'
+              children: 
+                Command-i: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Swirl'
+                  children:  {}
+Leap of Joy: 
+  name: 'Leap of Joy'
+  type: 'Leap'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '6'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARROW'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fAllows you to leap from'
+  - '&fthe surface'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Water-b: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'In Water'
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Leap_of_Joy'
+              children:  {}
+        Water-d: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'Out Of Water'
+          children: 
+            Message-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cYou have to be in water to do this!'
+              children:  {}
+Luck of the Sea: 
+  name: 'Luck of the Sea'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GOLD_NUGGET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fVarious treasures will show up'
+  - '&fin the vicinity, in water'
+  desc:  []
+  components:  {}
+Natural Environment: 
+  name: 'Natural Environment'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WATER_BUCKET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fYou regenerate health faster'
+  - '&fwhile in water'
+  desc:  []
+  components:  {}
+Drag: 
+  name: 'Drag'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-5'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '35'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEASH'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:duration.chance}'
+  - ''
+  - '&fDrags a single target with'
+  - '&fyou for some duration'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '8'
+            chance-scale: '8'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-d: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Drag'
+          children:  {}
+Carry (Sea Pony): 
+  name: 'Carry (Sea Pony)'
+  type: 'Single'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SADDLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows you to carry other players.'
+  - '&fCarrying players will increase'
+  - '&fyour food consumption and reduce'
+  - '&fyour speed'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea skill carry_seapony {player}'
+          children:  {}
+Experienced: 
+  name: 'Experienced'
+  type: 'Passive'
+  max-level: 2
+  skill-req: 'Rolling with it'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'EXP_BOTTLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Percentage: {attr:percent.chance}&b%'
+  - ''
+  - '&fSome of the damage dealt'
+  - '&fby weapons bypasses all'
+  - '&fforms of armor'
+  - '&7(Requires Rolling with it)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'percent'
+            chance-base: '10'
+            chance-scale: '10'
+          children:  {}
+Disarm: 
+  name: 'Disarm'
+  type: 'Single'
+  max-level: 1
+  skill-req: 'Thaumic Blast'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '19'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'STICK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - ''
+  - '&fDisarms the target you are'
+  - '&flooking at, removing the'
+  - '&fweapon they are holding'
+  - '&7(Requires Thaumic Blast 2)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Disarm'
+          children:  {}
+Pull: 
+  name: 'Pull'
+  type: 'Single'
+  max-level: 1
+  skill-req: 'Repel'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '35'
+    mana-scale: '0'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_INGOT'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Force: {attr:force.speed}'
+  - '&9Range: {attr:range.range}'
+  - ''
+  - '&fPulls one target towards you'
+  - '&7(Requires Repel)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '75'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: 'range'
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              data: 
+                speed-base: '-0.5'
+                speed-scale: '0'
+                counts: 'True'
+                icon-key: 'force'
+                type: 'Inverse'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '2'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '4'
+              children:  {}
+Resilient: 
+  name: 'Resilient'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'CLAY_BRICK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fLiving on the ground has some'
+  - '&fadvantages over living in the sky'
+  - '&fGrants 10% damage reduction'
+  - '&ffrom all damage sources'
+  desc:  []
+  components:  {}
+Golden Apple Farmer: 
+  name: 'Golden Apple Farmer'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Apple Farmer'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '90'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GOLDEN_APPLE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fAllows you to plant golden apples'
+  - '&fto grow an apple tree that drops'
+  - '&fgolden apples every now and then'
+  - '&fRight-click bottom of the tree'
+  - '&fto see the tree stats'
+  - '&7(Requires Apple Farmer)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components:  {}
+Craft Respirator: 
+  name: 'Craft Respirator'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Bright Crafter'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '5'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ELYTRA'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fConstructs a device that allow you'
+  - '&fto maintain oxygen for a significant'
+  - '&fperiod of time on land'
+  - '&7(Requires Bright Crafter)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Craft_Respirator'
+              children:  {}
+Stealth: 
+  name: 'Stealth'
+  type: 'Self'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LONG_GRASS'
+  icon-data: 1
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fCast when in dim'
+  - '&flight to blend in'
+  - '&fto your surrondings'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Light-b: 
+          type: 'condition'
+          data: 
+            min-light-scale: '0'
+            max-light-scale: '0'
+            max-light-base: '3'
+            icon-key: ''
+            min-light-base: '0'
+          children: 
+            Water-c: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                state: 'Out Of Water'
+              children: 
+                Potion-d: 
+                  type: 'mechanic'
+                  data: 
+                    potion: 'Invisibility'
+                    counts: 'True'
+                    icon-key: 'potion'
+                    ambient: 'True'
+                    tier-scale: '0'
+                    seconds-scale: '3'
+                    tier-base: '1'
+                    seconds-base: '7'
+                  children:  {}
+        Light-e: 
+          type: 'condition'
+          data: 
+            min-light-scale: '0'
+            max-light-scale: '0'
+            max-light-base: '16'
+            icon-key: ''
+            min-light-base: '4'
+          children: 
+            Message-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cThis does not appear to be a good hiding spot'
+              children:  {}
+Thick Scales: 
+  name: 'Thick Scales'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '240'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 8
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fProvides a resistance effect'
+  - '&ffor some duration'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Damage Resistance'
+                counts: 'True'
+                icon-key: 'potion'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '2'
+                seconds-base: '120'
+              children:  {}
+            Potion-d: 
+              type: 'mechanic'
+              data: 
+                potion: 'Absorption'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '3'
+                seconds-base: '15'
+              children:  {}
+Dispel: 
+  name: 'Dispel'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '55'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MILK_BUCKET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:area.radius}'
+  - ''
+  - '&fRemoves all positive and negative'
+  - '&feffects on you and nearby entities'
+  - '&7(Requires level 10 to unlock)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'True'
+            max-base: '10'
+            radius-scale: '2'
+            icon-key: 'area'
+            radius-base: '5'
+            wall: 'False'
+            group: 'Both'
+            max-scale: '0'
+          children: 
+            Cleanse-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'All'
+                counts: 'True'
+                icon-key: ''
+                status: 'All'
+              children:  {}
+            Purge-d: 
+              type: 'mechanic'
+              data: 
+                potion: 'All'
+                counts: 'True'
+                icon-key: ''
+                status: 'All'
+              children:  {}
+Hold: 
+  name: 'Hold'
+  type: 'Single'
+  max-level: 1
+  skill-req: 'Disarm'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '39'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLASS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - '&9Duration: {attr:duration.chance}'
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fLocks the target in place,'
+  - '&fmaking them unable to move'
+  - '&7(Requires Disarm)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '25'
+            chance-scale: '0'
+          children: 
+            Chance-e: 
+              type: 'condition'
+              data: 
+                icon-key: 'duration'
+                chance-base: '5'
+                chance-scale: '0'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Hold'
+          children:  {}
+Cling: 
+  name: 'Cling'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Efficient Flyer'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PAPER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows navigating small spaces'
+  - '&fat the cost of greatly reduced speed'
+  - '&7(Requires Efficient Flyer)'
+  desc:  []
+  components:  {}
+Quick Recovery: 
+  name: 'Quick Recovery'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Endurance'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Recovery Boost: {attr:recovery.chance}&b%'
+  - '&9Speed Boost: {attr:speed.chance}&b%'
+  - ''
+  - '&fYou recover oxygen faster'
+  - '&fwhile under water'
+  - '&fGrants a small movement'
+  - '&fboost while on land'
+  - '&7(Requires Endurace 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'speed'
+            chance-base: '10'
+            chance-scale: '0'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              data: 
+                icon-key: 'recovery'
+                chance-base: '50'
+                chance-scale: '0'
+              children:  {}
