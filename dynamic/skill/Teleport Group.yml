@@ -1,0 +1,126 @@
+Teleport Group: 
+  name: 'Teleport Group'
+  type: 'Group'
+  max-level: 1
+  skill-req: 'Teleport'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '62'
+    mana-scale: '12'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'EYE_OF_ENDER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - '&9Delay: {attr:delay.delay}'
+  - ''
+  - '&fAfter some delay, teleports'
+  - '&fyou and all nearby entities'
+  - '&fto the location you aim at'
+  - '&7(Requires Teleport 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '40'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-d: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Delay-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                delay-base: '3'
+                icon-key: 'delay'
+                delay-scale: '0'
+              children: 
+                Command-f: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Teleport_Group'
+                  children:  {}
+            Sound-g: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '60'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0'
+                version: '1.9+'
+                newsound: 'Block Portal Travel'
+              children:  {}
+            Repeat-h: 
+              type: 'mechanic'
+              data: 
+                period: '1'
+                delay: '0'
+                repetitions-base: '3'
+                counts: 'False'
+                icon-key: ''
+                repetitions-scale: '0'
+              children: 
+                Particle-i: 
+                  type: 'mechanic'
+                  data: 
+                    visible-radius: '25'
+                    amount: '1'
+                    counts: 'False'
+                    forward: '0'
+                    radius-scale: '0'
+                    particles-scale: '0'
+                    particles-base: '20'
+                    right: '0'
+                    radius-base: '4'
+                    speed: '0.1'
+                    arrangement: 'Sphere'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    icon-key: ''
+                    particle: 'Portal'
+                    upward: '0'
+                  children:  {}
+            Cooldown-j: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                skill: 'Teleport Group'
+                value-scale: '0'
+                icon-key: ''
+                type: 'Seconds'
+                value-base: '-7.5'
+              children:  {}

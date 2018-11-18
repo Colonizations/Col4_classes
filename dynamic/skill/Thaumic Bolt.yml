@@ -1,0 +1,99 @@
+Thaumic Bolt: 
+  name: 'Thaumic Bolt'
+  type: 'Projectile'
+  max-level: 2
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '16'
+    mana-scale: '7'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'STRING'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fLaunches a small thaumic bolt'
+  - '&fthat damages the first target hit'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            lifespan: '10'
+            particles-base: '25'
+            radius-base: '0.25'
+            speed: '1'
+            frequency: '0.05'
+            arrangement: 'Circle'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '2'
+            particle: 'Witch Magic'
+            group: 'Enemy'
+            direction: 'XZ'
+            visible-radius: '100'
+            amount: '1'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '1.25'
+            angle-base: '30'
+            velocity-scale: '0.5'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                value-scale: '4'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '7'
+              children:  {}
+            Sound-d: 
+              type: 'mechanic'
+              data: 
+                pitch-scale: '0'
+                counts: 'False'
+                volume-base: '50'
+                volume-scale: '0'
+                icon-key: ''
+                pitch-base: '0.9'
+                version: '1.9+'
+                newsound: 'Entity Firework Blast'
+              children:  {}
+        Sound-e: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'False'
+            volume-base: '40'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '-0.95'
+            version: '1.9+'
+            newsound: 'Entity Wither Hurt'
+          children:  {}

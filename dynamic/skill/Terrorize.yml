@@ -1,0 +1,70 @@
+Terrorize: 
+  name: 'Terrorize'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '60'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:effect.seconds}'
+  - ''
+  - '&fAll nearby targets are overrun'
+  - '&fwith fear, clouding their vision'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '999'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '50'
+            wall: 'True'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Blindness'
+                counts: 'True'
+                icon-key: 'effect'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '15'
+              children:  {}
+        Sound-d: 
+          type: 'mechanic'
+          data: 
+            pitch-scale: '0'
+            counts: 'True'
+            volume-base: '500'
+            volume-scale: '0'
+            icon-key: ''
+            pitch-base: '0.5'
+            version: '1.9+'
+            newsound: 'Entity Wither Spawn'
+          children:  {}

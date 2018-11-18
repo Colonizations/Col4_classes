@@ -1,0 +1,78 @@
+Stealth: 
+  name: 'Stealth'
+  type: 'Self'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LONG_GRASS'
+  icon-data: 1
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fCast when in dim'
+  - '&flight to blend in'
+  - '&fto your surrondings'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Light-b: 
+          type: 'condition'
+          data: 
+            min-light-scale: '0'
+            max-light-scale: '0'
+            max-light-base: '3'
+            icon-key: ''
+            min-light-base: '0'
+          children: 
+            Water-c: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                state: 'Out Of Water'
+              children: 
+                Potion-d: 
+                  type: 'mechanic'
+                  data: 
+                    potion: 'Invisibility'
+                    counts: 'True'
+                    icon-key: 'potion'
+                    ambient: 'True'
+                    tier-scale: '0'
+                    seconds-scale: '3'
+                    tier-base: '1'
+                    seconds-base: '7'
+                  children:  {}
+        Light-e: 
+          type: 'condition'
+          data: 
+            min-light-scale: '0'
+            max-light-scale: '0'
+            max-light-base: '16'
+            icon-key: ''
+            min-light-base: '4'
+          children: 
+            Message-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cThis does not appear to be a good hiding spot'
+              children:  {}

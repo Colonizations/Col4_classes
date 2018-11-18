@@ -1,0 +1,43 @@
+Teamwork: 
+  name: 'Teamwork'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_HELMET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Damage Increase: {attr:damage.chance}&b%'
+  - ''
+  - '&fOther players who attack the'
+  - '&fsame targets as you will deal'
+  - '&fmore damage to those targets'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '30'
+            chance-scale: '0'
+          children:  {}

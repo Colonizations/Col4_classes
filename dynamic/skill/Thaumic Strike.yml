@@ -1,0 +1,61 @@
+Thaumic Strike: 
+  name: 'Thaumic Strike'
+  type: 'Dash'
+  max-level: 2
+  skill-req: 'Thaumic Bolt'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-2'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '21'
+    mana-scale: '6'
+    cooldown-base: '16'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fDashing forward, dealing'
+  - '&fdamage to all targets within'
+  - '&fa small area around where'
+  - '&fyou land on the ground'
+  - '&7(Requires Thaumic Bolt 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '10'
+            chance-scale: '5'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Thaumic_Strike'
+          children:  {}

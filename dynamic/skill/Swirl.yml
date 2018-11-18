@@ -1,0 +1,91 @@
+Swirl: 
+  name: 'Swirl'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Torrent'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '19'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SNOW_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Radius: {attr:range.chance}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fSpins around in the water,'
+  - '&fcausing damage to all nearby'
+  - '&ftargets within line of sight'
+  - '&7(Requires Torrent 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '6'
+            chance-scale: '5'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              data: 
+                icon-key: 'range'
+                chance-base: '12'
+                chance-scale: '4'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-e: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Water-f: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                state: 'Out Of Water'
+              children: 
+                Message-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    message: '&9Damage: {attr:damage.value}'
+                  children:  {}
+            Water-h: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                state: 'In Water'
+              children: 
+                Command-i: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    type: 'Console'
+                    command: 'pangaea cast {player} Swirl'
+                  children:  {}
