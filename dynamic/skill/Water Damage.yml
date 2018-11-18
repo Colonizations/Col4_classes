@@ -1,0 +1,72 @@
+Water Damage: 
+  name: 'Water Damage'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '3500'
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'SNOW_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fDamages you while in water, or'
+  - '&fon snow'
+  - ''
+  - "&cDon't forget to use me before combat!"
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Repeat-c: 
+              type: 'mechanic'
+              data: 
+                period: '1'
+                delay: '0'
+                repetitions-base: '3600'
+                counts: 'True'
+                icon-key: ''
+                repetitions-scale: '0'
+              children: 
+                Water-d: 
+                  type: 'condition'
+                  data: 
+                    icon-key: ''
+                    state: 'In Water'
+                  children: 
+                    Damage-e: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'True'
+                        value-scale: '0'
+                        true: 'False'
+                        icon-key: ''
+                        type: 'Damage'
+                        value-base: '5'
+                      children:  {}
+            Message-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                message: '&cDamage from water/snow active, will be active for ONE hour only! Cooldown is the time left before effect runs out'
+              children:  {}

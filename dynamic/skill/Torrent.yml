@@ -1,0 +1,84 @@
+Torrent: 
+  name: 'Torrent'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Water Jet'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '21'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PACKED_ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fSends a wave of water towards'
+  - '&fthe targets, harming them all'
+  - '&7(Requires Water Jet 2)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Water-b: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'In Water'
+          children: 
+            Cone-c: 
+              type: 'target'
+              data: 
+                angle-scale: '0'
+                caster: 'False'
+                max-base: '99'
+                range-scale: '0'
+                range-base: '8'
+                icon-key: ''
+                angle-base: '90'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '6'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '6'
+                  children:  {}
+        Water-e: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'Out Of Water'
+          children: 
+            Self-f: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Message-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    message: '&cYou have to be in water to do this!'
+                  children:  {}

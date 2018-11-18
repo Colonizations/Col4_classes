@@ -1,0 +1,58 @@
+Thunder: 
+  name: 'Thunder'
+  type: 'Target'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-6'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '22'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 7
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fFires a lightning bolt from the cloud'
+  - '&fyou have produced, which hits the'
+  - "&flocation you're aiming at"
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'damage'
+            chance-base: '4'
+            chance-scale: '3'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-d: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Thunder'
+          children:  {}

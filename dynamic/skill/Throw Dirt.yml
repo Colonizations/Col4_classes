@@ -1,0 +1,69 @@
+Throw Dirt: 
+  name: 'Throw Dirt'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '18'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SULPHUR'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fThrows some dirt at the'
+  - '&ftargets, blinding them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Cone-b: 
+          type: 'target'
+          data: 
+            angle-scale: '0'
+            caster: 'False'
+            max-base: '99'
+            range-scale: '0'
+            range-base: '15'
+            icon-key: 'cone'
+            angle-base: '45'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Blindness'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '1'
+                tier-base: '1'
+                seconds-base: '10'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '1'
+              children:  {}

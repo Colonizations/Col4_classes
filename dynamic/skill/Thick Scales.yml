@@ -1,0 +1,63 @@
+Thick Scales: 
+  name: 'Thick Scales'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '240'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'INK_SACK'
+  icon-data: 8
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fProvides a resistance effect'
+  - '&ffor some duration'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Damage Resistance'
+                counts: 'True'
+                icon-key: 'potion'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '2'
+                seconds-base: '120'
+              children:  {}
+            Potion-d: 
+              type: 'mechanic'
+              data: 
+                potion: 'Absorption'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '3'
+                seconds-base: '15'
+              children:  {}

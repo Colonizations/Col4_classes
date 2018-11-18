@@ -1,0 +1,51 @@
+Water Breathing: 
+  name: 'Water Breathing'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '45'
+    mana-scale: '10'
+    cooldown-base: '240'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'POTION'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:potion.seconds}'
+  - ''
+  - '&fAllows breathing under water'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Water Breathing'
+                counts: 'True'
+                icon-key: 'potion'
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '1'
+                seconds-base: '120'
+              children:  {}

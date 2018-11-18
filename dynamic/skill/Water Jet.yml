@@ -1,0 +1,79 @@
+Water Jet: 
+  name: 'Water Jet'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-3'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fStrikes a single target with a'
+  - '&fjet of water, harming them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Water-b: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'In Water'
+          children: 
+            Single-c: 
+              type: 'target'
+              data: 
+                range-scale: '0'
+                range-base: '18'
+                tolerance-scale: '0'
+                tolerance-base: '4'
+                icon-key: ''
+                wall: 'False'
+                group: 'Enemy'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '6'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '6'
+                  children:  {}
+        Water-e: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'Out Of Water'
+          children: 
+            Self-f: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Message-g: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'False'
+                    icon-key: ''
+                    message: '&cYou have to be in water to do this!'
+                  children:  {}
