@@ -1,0 +1,31 @@
+Change Weather: 
+  name: 'Change Weather'
+  type: 'World'
+  max-level: 1
+  skill-req: 'Thunder'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '25'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '1200'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WOOL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fChanges the weather of the world'
+  - '&7(Requires Thunder 2)'
+  - '&7(Requires level 25 to unlock)'
+  - '&7/changeweather sun|rain|thunder'
+  desc:  []
+  components:  {}
