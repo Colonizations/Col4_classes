@@ -1,0 +1,39 @@
+Changeling: 
+  name: 'Changeling'
+  prefix: '&aChangeling'
+  group: 'race'
+  mana: '&2Mana'
+  max-level: 25
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    mana-base: '75'
+    mana-scale: '0'
+    health-scale: '0'
+  mana-regen: 2.0
+  tree: 'REQUIREMENT'
+  skills: 
+  - 'Drain'
+  - 'Metabolism'
+  - 'Absorb'
+  - 'Fly'
+  - 'Attitude Control'
+  - 'Efficient Flyer'
+  - 'Thaumic Bolt'
+  - 'Thaumic Strike'
+  - 'Fire Portal'
+  - 'Solid Resin'
+  - 'Clear Resin'
+  - 'Sticky Resin'
+  - 'Leech'
+  - 'Hollow Leg'
+  - 'Bug'
+  - 'Disguise'
+  - 'Reinforced Shell'
+  - 'Night Vision'
+  - 'Ambient Feeding'
+  - 'Share the Love'
+  icon: 'BONE'
+  icon-data: 0
+  exp-source: 273
