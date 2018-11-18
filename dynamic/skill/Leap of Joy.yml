@@ -1,0 +1,61 @@
+Leap of Joy: 
+  name: 'Leap of Joy'
+  type: 'Leap'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '6'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARROW'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fAllows you to leap from'
+  - '&fthe surface'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Water-b: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'In Water'
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Leap_of_Joy'
+              children:  {}
+        Water-d: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            state: 'Out Of Water'
+          children: 
+            Message-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cYou have to be in water to do this!'
+              children:  {}

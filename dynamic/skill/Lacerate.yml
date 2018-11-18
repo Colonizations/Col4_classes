@@ -1,0 +1,220 @@
+Lacerate: 
+  name: 'Lacerate'
+  type: 'Single'
+  max-level: 2
+  skill-req: 'Swipe'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '21'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_SWORD'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Total Damage: {attr:bleed.repetitions}'
+  - ''
+  - '&fYour weapon strike softer areas,'
+  - '&fcutting deeper. The target take true'
+  - '&fdamage over time from bleeding'
+  - '&7(Requires Swipe 2)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Flag Clear-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            key: 'weapon'
+          children:  {}
+        Item-c: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Wood Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-e: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Stone Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-g: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Iron Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-h: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-i: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Gold Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-j: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Item-k: 
+          type: 'condition'
+          data: 
+            regex: 'False'
+            material: 'Diamond Sword'
+            check-name: 'False'
+            icon-key: ''
+            check-mat: 'True'
+            check-data: 'False'
+            check-lore: 'False'
+          children: 
+            Flag Toggle-l: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                key: 'weapon'
+              children:  {}
+        Flag-m: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Set'
+            key: 'weapon'
+          children: 
+            Single-n: 
+              type: 'target'
+              data: 
+                range-scale: '0'
+                range-base: '5'
+                tolerance-scale: '0'
+                tolerance-base: '4'
+                icon-key: ''
+                wall: 'False'
+                group: 'Enemy'
+              children: 
+                Repeat-o: 
+                  type: 'mechanic'
+                  data: 
+                    period: '2.5'
+                    delay: '0'
+                    repetitions-base: '4'
+                    counts: 'False'
+                    icon-key: 'bleed'
+                    repetitions-scale: '4'
+                  children: 
+                    Damage-p: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        value-scale: '0'
+                        true: 'True'
+                        icon-key: ''
+                        type: 'Damage'
+                        value-base: '1'
+                      children:  {}
+                    Damage-q: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        value-scale: '0'
+                        true: 'False'
+                        icon-key: ''
+                        type: 'Damage'
+                        value-base: '0'
+                      children:  {}
+                Damage-r: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0'
+                    true: 'False'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '0'
+                  children:  {}
+                Self-s: 
+                  type: 'target'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Command-t: 
+                      type: 'mechanic'
+                      data: 
+                        counts: 'False'
+                        icon-key: ''
+                        type: 'Console'
+                        command: 'pangaea cast {player} Lacerate'
+                      children:  {}
+        Flag-u: 
+          type: 'condition'
+          data: 
+            icon-key: ''
+            type: 'Not Set'
+            key: 'weapon'
+          children: 
+            Message-v: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                message: '&cYou need to hold a weapon to use this ability'
+              children:  {}

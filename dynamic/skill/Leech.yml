@@ -1,0 +1,89 @@
+Leech: 
+  name: 'Leech'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '120'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PORK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Hunger points: {attr:hunger.chance}'
+  - ''
+  - '&fDrains the target for some'
+  - '&fhunger points, filling your'
+  - '&fhunger bar'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-g: 
+          type: 'condition'
+          data: 
+            icon-key: 'hunger'
+            chance-base: '30'
+            chance-scale: '30'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '3'
+            range-base: '6'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Saturation'
+                counts: 'False'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '-6'
+                seconds-scale: '0'
+                tier-base: '-6'
+                seconds-base: '0.05'
+              children:  {}
+            Self-d: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Potion-e: 
+                  type: 'mechanic'
+                  data: 
+                    potion: 'Saturation'
+                    counts: 'True'
+                    icon-key: ''
+                    ambient: 'True'
+                    tier-scale: '6'
+                    seconds-scale: '0'
+                    tier-base: '6'
+                    seconds-base: '0.05'
+                  children:  {}

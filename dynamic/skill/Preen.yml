@@ -1,0 +1,79 @@
+Preen: 
+  name: 'Preen'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '500'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Speed Boost: {attr:boost.chance}&b%'
+  - ''
+  - '&fPreening yourself by removing'
+  - '&fdamaged feathers, allowing'
+  - '&fthem to be used for other things.'
+  - '&fWill grant a small speed boost'
+  - '&ffor four minute after preening'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-f: 
+          type: 'condition'
+          data: 
+            icon-key: 'boost'
+            chance-base: '15'
+            chance-scale: '0'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Item-c: 
+              type: 'mechanic'
+              data: 
+                amount: '12'
+                material: 'Feather'
+                data: '0'
+                lore: 
+                - '&bOnce used for attitude control and general flight,'
+                - '&bnow used for decoration, writing or for utility'
+                counts: 'True'
+                byte: '0'
+                custom: 'True'
+                name: '&fPegasus Feather'
+                icon-key: ''
+              children:  {}
+            Command-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} Preen true 4800'
+              children:  {}

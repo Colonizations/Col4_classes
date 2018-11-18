@@ -1,0 +1,73 @@
+Kick: 
+  name: 'Kick'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-2'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '8'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEATHER_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fKnocks the targets behind you'
+  - '&faway while dealing damage to them'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '3.5'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Direction-c: 
+              type: 'condition'
+              data: 
+                icon-key: ''
+                type: 'Caster'
+                direction: 'Away'
+              children: 
+                Push-d: 
+                  type: 'mechanic'
+                  data: 
+                    speed-base: '4'
+                    speed-scale: '1.5'
+                    counts: 'True'
+                    icon-key: ''
+                    type: 'Fixed'
+                  children:  {}
+                Damage-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '5'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '11'
+                  children:  {}
