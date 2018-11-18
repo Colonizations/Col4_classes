@@ -1,0 +1,28 @@
+Rolling with it: 
+  name: 'Rolling with it'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Quick Catch'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_LEGGINGS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fReduces damage taken from'
+  - '&fphysical attacks by 10%'
+  - '&7(Requires Quick Catch 2)'
+  desc:  []
+  components:  {}

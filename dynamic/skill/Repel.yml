@@ -1,0 +1,67 @@
+Repel: 
+  name: 'Repel'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '21'
+    mana-scale: '6'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Force: {attr:force.speed}'
+  - ''
+  - '&fPushes away all nearby entities'
+  - '&fNearby entities will be pushed'
+  - '&fharder than distant entities'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '2'
+            icon-key: ''
+            radius-base: '6'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              data: 
+                speed-base: '3.75'
+                speed-scale: '0.75'
+                counts: 'True'
+                icon-key: 'force'
+                type: 'Scaled'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '2'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '4'
+              children:  {}

@@ -1,0 +1,44 @@
+Quick Catch: 
+  name: 'Quick Catch'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Chance: &b{attr:chance.chance}&b%'
+  - ''
+  - '&fWith improved reflexes, sometimes'
+  - '&fyou will be able to catch an arrow'
+  - '&fin mid-flight, preventing damage if'
+  - '&fit would have hit you'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'chance'
+            chance-base: '15'
+            chance-scale: '15'
+          children:  {}

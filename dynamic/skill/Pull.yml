@@ -1,0 +1,67 @@
+Pull: 
+  name: 'Pull'
+  type: 'Single'
+  max-level: 1
+  skill-req: 'Repel'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '35'
+    mana-scale: '0'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_INGOT'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Force: {attr:force.speed}'
+  - '&9Range: {attr:range.range}'
+  - ''
+  - '&fPulls one target towards you'
+  - '&7(Requires Repel)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '75'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: 'range'
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              data: 
+                speed-base: '-0.5'
+                speed-scale: '0'
+                counts: 'True'
+                icon-key: 'force'
+                type: 'Inverse'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '2'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '4'
+              children:  {}

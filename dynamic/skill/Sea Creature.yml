@@ -1,0 +1,27 @@
+Sea Creature: 
+  name: 'Sea Creature'
+  type: 'Passive'
+  max-level: 0
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'QUARTZ'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f(trait)'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fYou can move faster while'
+  - '&fsubmerged, but slower on'
+  - '&fthe water surface and land'
+  desc:  []
+  components:  {}

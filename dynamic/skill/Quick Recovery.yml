@@ -1,0 +1,54 @@
+Quick Recovery: 
+  name: 'Quick Recovery'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'Endurance'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Recovery Boost: {attr:recovery.chance}&b%'
+  - '&9Speed Boost: {attr:speed.chance}&b%'
+  - ''
+  - '&fYou recover oxygen faster'
+  - '&fwhile under water'
+  - '&fGrants a small movement'
+  - '&fboost while on land'
+  - '&7(Requires Endurace 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'speed'
+            chance-base: '10'
+            chance-scale: '0'
+          children: 
+            Chance-c: 
+              type: 'condition'
+              data: 
+                icon-key: 'recovery'
+                chance-base: '50'
+                chance-scale: '0'
+              children:  {}

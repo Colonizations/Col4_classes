@@ -1,0 +1,56 @@
+Skill 1: 
+  name: 'Skill 1'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'COOKIE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&f<something something weakness>'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '10'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'Weakness'
+                counts: 'True'
+                icon-key: ''
+                ambient: 'True'
+                tier-scale: '0'
+                seconds-scale: '0'
+                tier-base: '3'
+                seconds-base: '18'
+              children:  {}
