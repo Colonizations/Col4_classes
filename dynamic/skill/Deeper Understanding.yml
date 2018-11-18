@@ -1,0 +1,47 @@
+Deeper Understanding: 
+  name: 'Deeper Understanding'
+  type: 'Self'
+  max-level: 1
+  skill-req: 'Harvest Sponge'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PRISMARINE_SHARD'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fWith a thorough knowledge of'
+  - '&fthe abyss, you know a method'
+  - '&fof crafting prismarine shards'
+  - '&7(Requires Harvest Sponge)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Deeper_Understanding'
+              children:  {}

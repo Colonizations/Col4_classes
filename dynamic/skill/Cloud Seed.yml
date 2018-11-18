@@ -1,0 +1,29 @@
+Cloud Seed: 
+  name: 'Cloud Seed'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SNOW_BALL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fAllows cloud blocks to be'
+  - '&fplaced in mid-air by right-'
+  - '&fclicking an empty space'
+  - '&fYou must hold a block in'
+  - '&forder to do this'
+  desc:  []
+  components:  {}

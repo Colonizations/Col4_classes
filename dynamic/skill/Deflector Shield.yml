@@ -1,0 +1,91 @@
+Deflector Shield: 
+  name: 'Deflector Shield'
+  type: 'Self'
+  max-level: 2
+  skill-req: 'Pull'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '45'
+    mana-scale: '11'
+    cooldown-base: '150'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_CHESTPLATE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Chance: {attr:chance.chance}&b%'
+  - '&9Duration: {attr:duration.chance}'
+  - ''
+  - '&fCreates a shield around you, that'
+  - '&fsometimes stop incoming projectiles'
+  - '&7(Requires Pull)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-g: 
+          type: 'condition'
+          data: 
+            icon-key: 'chance'
+            chance-base: '30'
+            chance-scale: '20'
+          children:  {}
+        Chance-h: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '45'
+            chance-scale: '15'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Skill Level-b: 
+          type: 'condition'
+          data: 
+            skill: 'Deflector Shield'
+            max-level: '1'
+            icon-key: ''
+            min-level: '0'
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} Deflector_Shield true 900'
+              children:  {}
+        Skill Level-d: 
+          type: 'condition'
+          data: 
+            skill: 'Deflector Shield'
+            max-level: '99'
+            icon-key: ''
+            min-level: '2'
+          children: 
+            Command-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea database {player} Deflector_Shield true 1200'
+              children:  {}
