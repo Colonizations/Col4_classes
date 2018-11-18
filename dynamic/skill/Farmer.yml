@@ -1,0 +1,28 @@
+Farmer: 
+  name: 'Farmer'
+  type: 'Passive'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_HOE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&fHarvests a larger area when harvesting'
+  - '&fPlants crops in a larger area when planting'
+  - '&fUpgrading increases the area'
+  - '&7(Sneaking disables this ability)'
+  desc:  []
+  components:  {}

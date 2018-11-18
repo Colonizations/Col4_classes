@@ -1,0 +1,56 @@
+Drag: 
+  name: 'Drag'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-5'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '35'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LEASH'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:duration.chance}'
+  - ''
+  - '&fDrags a single target with'
+  - '&fyou for some duration'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '8'
+            chance-scale: '8'
+          children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-d: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Drag'
+          children:  {}

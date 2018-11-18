@@ -1,0 +1,82 @@
+Drain: 
+  name: 'Drain'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '38'
+    mana-scale: '10'
+    cooldown-base: '1'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Healing: {attr:heal.value}'
+  - ''
+  - '&fDrains some health from a'
+  - '&fsingle target, healing you.'
+  - '&fThis ignores the armor of'
+  - '&fthe target'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                value-scale: '2.5'
+                true: 'True'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '2.5'
+              children:  {}
+            Self-d: 
+              type: 'target'
+              data: 
+                icon-key: ''
+              children: 
+                Heal-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '2.5'
+                    icon-key: 'heal'
+                    type: 'Health'
+                    value-base: '2.5'
+                  children:  {}
+            Damage-f: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '0'
+              children:  {}

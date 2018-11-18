@@ -1,0 +1,106 @@
+Fire Bolt: 
+  name: 'Fire Bolt'
+  type: 'Projectile'
+  max-level: 2
+  skill-req: 'Fire Slash'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '20'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE_BLOCK'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.seconds}'
+  - ''
+  - '&fLaunches a ball of fire towards'
+  - '&fthe target location; all targets'
+  - '&fwithin the impact area are'
+  - '&fignited and pushed away'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'True'
+            lifespan: '5'
+            particles-base: '20'
+            radius-base: '0.5'
+            speed: '0.08'
+            frequency: '0.05'
+            arrangement: 'Sphere'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            velocity-base: '3'
+            particle: 'Flame'
+            group: 'Enemy'
+            visible-radius: '75'
+            amount: '1'
+            radius-scale: '0'
+            particles-scale: '0'
+            amount-base: '1'
+            spread: 'Cone'
+            angle-scale: '0'
+            icon-key: ''
+            amount-scale: '0'
+            position: '1.5'
+            angle-base: '0'
+            velocity-scale: '0'
+          children: 
+            Area-c: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '0'
+                icon-key: ''
+                radius-base: '4'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '2'
+                    true: 'False'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '4'
+                  children:  {}
+                Fire-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    icon-key: 'duration'
+                    seconds-scale: '2'
+                    seconds-base: '3'
+                  children:  {}
+                Push-f: 
+                  type: 'mechanic'
+                  data: 
+                    speed-base: '3'
+                    speed-scale: '1'
+                    counts: 'True'
+                    icon-key: ''
+                    type: 'Fixed'
+                  children:  {}

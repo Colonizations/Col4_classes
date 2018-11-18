@@ -1,0 +1,75 @@
+Fire Slash: 
+  name: 'Fire Slash'
+  type: 'Single'
+  max-level: 2
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '20'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.seconds}'
+  - ''
+  - '&fSets one target on fire for some'
+  - '&fduration, as well as dealing'
+  - '&finitial damage to that target'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Single-b: 
+          type: 'target'
+          data: 
+            range-scale: '0'
+            range-base: '6'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+          children: 
+            Fire-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                icon-key: 'duration'
+                seconds-scale: '3.5'
+                seconds-base: '3.5'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '3'
+                true: 'True'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '7'
+              children:  {}
+            Damage-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '0'
+              children:  {}

@@ -1,0 +1,63 @@
+Dispel: 
+  name: 'Dispel'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '10'
+    mana-base: '55'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MILK_BUCKET'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:area.radius}'
+  - ''
+  - '&fRemoves all positive and negative'
+  - '&feffects on you and nearby entities'
+  - '&7(Requires level 10 to unlock)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'True'
+            max-base: '10'
+            radius-scale: '2'
+            icon-key: 'area'
+            radius-base: '5'
+            wall: 'False'
+            group: 'Both'
+            max-scale: '0'
+          children: 
+            Cleanse-c: 
+              type: 'mechanic'
+              data: 
+                potion: 'All'
+                counts: 'True'
+                icon-key: ''
+                status: 'All'
+              children:  {}
+            Purge-d: 
+              type: 'mechanic'
+              data: 
+                potion: 'All'
+                counts: 'True'
+                icon-key: ''
+                status: 'All'
+              children:  {}
