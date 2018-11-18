@@ -1,0 +1,69 @@
+Hailstorm: 
+  name: 'Hailstorm'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Cooling'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-7'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '57'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PACKED_ICE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Duration: {attr:duration.chance}'
+  - '&9Damage: {attr:damage.chance}'
+  - ''
+  - '&fGenerates a storm of hail'
+  - '&faround you, dealing damage'
+  - '&fto all nearby entities'
+  - '&fevery second'
+  - '&7(Requires Cooling)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'duration'
+            chance-base: '10'
+            chance-scale: '5'
+          children: 
+            Chance-e: 
+              type: 'condition'
+              data: 
+                icon-key: 'damage'
+                chance-base: '1.0'
+                chance-scale: '0.25'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Hailstorm'
+          children:  {}

@@ -1,0 +1,46 @@
+Harvest Sponge: 
+  name: 'Harvest Sponge'
+  type: 'Self'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '60'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SPONGE'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: &b{attr:cooldown}'
+  - ''
+  - '&fA good eye helps you spot'
+  - '&fsponges around in the world'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Self-b: 
+          type: 'target'
+          data: 
+            icon-key: ''
+          children: 
+            Command-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'False'
+                icon-key: ''
+                type: 'Console'
+                command: 'pangaea cast {player} Harvest_Sponge'
+              children:  {}

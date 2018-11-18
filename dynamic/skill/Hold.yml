@@ -1,0 +1,68 @@
+Hold: 
+  name: 'Hold'
+  type: 'Single'
+  max-level: 1
+  skill-req: 'Disarm'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '20'
+    mana-base: '39'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLASS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Mana: {attr:mana}'
+  - '&9Range: {attr:range.chance}'
+  - '&9Duration: {attr:duration.chance}'
+  - '&9Cooldown: {attr:cooldown}'
+  - ''
+  - '&fLocks the target in place,'
+  - '&fmaking them unable to move'
+  - '&7(Requires Disarm)'
+  - '&7(Requires level 20 to unlock)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-d: 
+          type: 'condition'
+          data: 
+            icon-key: 'range'
+            chance-base: '25'
+            chance-scale: '0'
+          children: 
+            Chance-e: 
+              type: 'condition'
+              data: 
+                icon-key: 'duration'
+                chance-base: '5'
+                chance-scale: '0'
+              children:  {}
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Command-b: 
+          type: 'mechanic'
+          data: 
+            counts: 'False'
+            icon-key: ''
+            type: 'Console'
+            command: 'pangaea cast {player} Hold'
+          children:  {}

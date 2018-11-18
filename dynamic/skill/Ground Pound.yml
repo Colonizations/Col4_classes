@@ -1,0 +1,69 @@
+Ground Pound: 
+  name: 'Ground Pound'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Hoof Strike'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-4'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '15'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fKnocks nearby targets up into the air'
+  - '&7(Requires Hoof Strike)'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '99'
+            radius-scale: '0'
+            icon-key: ''
+            radius-base: '5'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '2'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '6'
+              children:  {}
+            Launch-d: 
+              type: 'mechanic'
+              data: 
+                right-scale: '0'
+                forward-base: '0'
+                right-base: '0'
+                forward-scale: '0'
+                counts: 'True'
+                upward-scale: '0.3'
+                icon-key: ''
+                upward-base: '0.8'
+              children:  {}

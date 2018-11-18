@@ -1,0 +1,58 @@
+Hoof Strike: 
+  name: 'Hoof Strike'
+  type: 'Single'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '7'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GOLD_BOOTS'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - ''
+  - '&fDeals damage to a single target'
+  - '&fin front of you'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Linear-b: 
+          type: 'target'
+          data: 
+            caster: 'False'
+            max-base: '1'
+            range-scale: '0'
+            range-base: '5'
+            tolerance-scale: '0'
+            tolerance-base: '4'
+            icon-key: ''
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Damage-c: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '8'
+              children:  {}

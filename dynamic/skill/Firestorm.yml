@@ -1,0 +1,107 @@
+Firestorm: 
+  name: 'Firestorm'
+  type: 'Group'
+  max-level: 2
+  skill-req: 'Ignite'
+  skill-req-lvl: 2
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '-8'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '60'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FIREBALL'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Duration: {attr:duration.repetitions}'
+  - ''
+  - '&fStarts a firestorm around you,'
+  - '&fburning all nearby entities'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Repeat-b: 
+          type: 'mechanic'
+          data: 
+            period: '1'
+            delay: '1'
+            repetitions-base: '20'
+            counts: 'True'
+            icon-key: 'duration'
+            repetitions-scale: '10'
+          children: 
+            Area-c: 
+              type: 'target'
+              data: 
+                caster: 'False'
+                max-base: '99'
+                radius-scale: '6'
+                icon-key: 'range'
+                radius-base: '12'
+                wall: 'False'
+                group: 'Enemy'
+                max-scale: '0'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0.75'
+                    true: 'True'
+                    icon-key: 'damage'
+                    type: 'Damage'
+                    value-base: '1.25'
+                  children:  {}
+                Fire-e: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    icon-key: ''
+                    seconds-scale: '0'
+                    seconds-base: '5'
+                  children:  {}
+                Damage-f: 
+                  type: 'mechanic'
+                  data: 
+                    counts: 'True'
+                    value-scale: '0'
+                    true: 'False'
+                    icon-key: ''
+                    type: 'Damage'
+                    value-base: '0'
+                  children:  {}
+            Particle-g: 
+              type: 'mechanic'
+              data: 
+                visible-radius: '75'
+                amount: '1'
+                counts: 'True'
+                forward: '0'
+                radius-scale: '4'
+                particles-scale: '20'
+                particles-base: '100'
+                right: '0'
+                radius-base: '12'
+                speed: '0.08'
+                arrangement: 'Sphere'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                icon-key: ''
+                particle: 'Flame'
+                upward: '0'
+              children:  {}

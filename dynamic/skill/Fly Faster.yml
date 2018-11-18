@@ -1,0 +1,45 @@
+Fly Faster: 
+  name: 'Fly Faster'
+  type: 'Passive'
+  max-level: 2
+  skill-req: 'Long-Range Flyer'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'QUARTZ'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Speed Boost: {attr:boost.chance}&b%'
+  - ''
+  - '&fImproves the maximum flight'
+  - '&fvelocity, at the cost of a higher'
+  - '&fhunger consumption rate'
+  - '&7(Requires Long-Range Flyer 2)'
+  desc:  []
+  components: 
+    Death: 
+      type: 'trigger'
+      data: 
+        mana: 'False'
+        cooldown: 'False'
+        icon-key: ''
+      children: 
+        Chance-b: 
+          type: 'condition'
+          data: 
+            icon-key: 'boost'
+            chance-base: '12.5'
+            chance-scale: '12.5'
+          children:  {}

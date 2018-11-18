@@ -1,0 +1,79 @@
+Gust: 
+  name: 'Gust'
+  type: 'Group'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    cost-base: '1'
+    cooldown-scale: '0'
+    cost-scale: '0'
+    level-scale: '0'
+    level-base: '1'
+    mana-base: '0'
+    mana-scale: '0'
+    cooldown-base: '9'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WEB'
+  icon-data: 0
+  icon-lore: 
+  - '&9&n{name}&r &f({level}/{max})'
+  - '&9Type: &b{type}'
+  - ''
+  - '&9Cooldown: {attr:cooldown}'
+  - '&9Damage: {attr:damage.value}'
+  - '&9Force: {attr:force.speed}'
+  - ''
+  - '&fSends out a gust of wind, pushing'
+  - '&ftargets in front of you away'
+  - '&fThe damage ignores armor'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      data: 
+        icon-key: ''
+      children: 
+        Cone-b: 
+          type: 'target'
+          data: 
+            angle-scale: '0'
+            caster: 'False'
+            max-base: '99'
+            range-scale: '0'
+            range-base: '12'
+            icon-key: ''
+            angle-base: '120'
+            wall: 'False'
+            group: 'Enemy'
+            max-scale: '0'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              data: 
+                speed-base: '4'
+                speed-scale: '0.5'
+                counts: 'True'
+                icon-key: 'force'
+                type: 'Fixed'
+              children:  {}
+            Damage-d: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'True'
+                icon-key: 'damage'
+                type: 'Damage'
+                value-base: '5'
+              children:  {}
+            Damage-e: 
+              type: 'mechanic'
+              data: 
+                counts: 'True'
+                value-scale: '0'
+                true: 'False'
+                icon-key: ''
+                type: 'Damage'
+                value-base: '0'
+              children:  {}
